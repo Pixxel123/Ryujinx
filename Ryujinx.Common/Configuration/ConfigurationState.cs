@@ -91,10 +91,10 @@ namespace Ryujinx.Configuration
             {
                 GuiColumns        = new Columns();
                 ColumnSort        = new ColumnSortSettings();
-                GameDirs          = new ReactiveObject<List<string>>();
-                EnableCustomTheme = new ReactiveObject<bool>();
-                CustomThemePath   = new ReactiveObject<string>();
-                StartFullscreen   = new ReactiveObject<bool>();
+                GameDirs          = new ReactiveObject<List<string>>(); //{ Name = "Game dir", Category = "UI" };
+                EnableCustomTheme = new ReactiveObject<bool>(); //{ Name = "Custom Theme", Category = "UI" };
+                CustomThemePath   = new ReactiveObject<string>(); //{ Name = "Custom Theme", Category = "UI" };
+                StartFullscreen   = new ReactiveObject<bool>(); //{ Name = "Fullscreen", Category = "UI" };
             }
         }
 
@@ -155,6 +155,7 @@ namespace Ryujinx.Configuration
 
             public LoggerSection()
             {
+<<<<<<< HEAD
                 EnableDebug         = new ReactiveObject<bool>();
                 EnableStub          = new ReactiveObject<bool>();
                 EnableInfo          = new ReactiveObject<bool>();
@@ -166,6 +167,18 @@ namespace Ryujinx.Configuration
                 EnableFileLog       = new ReactiveObject<bool>();
                 EnableFileLog.Event += static (sender, e) => LogValueChange(sender, e, nameof(EnableFileLog));
                 GraphicsDebugLevel  = new ReactiveObject<GraphicsDebugLevel>();
+=======
+                EnableDebug        = new ReactiveObject<bool>();
+                EnableStub         = new ReactiveObject<bool>();
+                EnableInfo         = new ReactiveObject<bool>();
+                EnableWarn         = new ReactiveObject<bool>();
+                EnableError        = new ReactiveObject<bool>();
+                EnableGuest        = new ReactiveObject<bool>();
+                EnableFsAccessLog  = new ReactiveObject<bool>();
+                FilteredClasses    = new ReactiveObject<LogClass[]>();
+                EnableFileLog      = new ReactiveObject<bool>(); //{ Name = "File Log", Category = "Logger" };
+                GraphicsDebugLevel = new ReactiveObject<GraphicsDebugLevel>() { Name = "Graphics level", Category = "Logger" };
+>>>>>>> Adds more items to logs:
             }
         }
 
@@ -276,7 +289,7 @@ namespace Ryujinx.Configuration
 
             public HidSection()
             {
-                EnableKeyboard = new ReactiveObject<bool>();
+                EnableKeyboard = new ReactiveObject<bool>() { Name = "Keyboard", Category = "Input" };
                 Hotkeys        = new ReactiveObject<KeyboardHotkeys>();
                 InputConfig    = new ReactiveObject<List<InputConfig>>();
             }
@@ -324,6 +337,7 @@ namespace Ryujinx.Configuration
 
             public GraphicsSection()
             {
+<<<<<<< HEAD
                 ResScale                = new ReactiveObject<int>();
                 ResScale.Event          += static (sender, e) => LogValueChange(sender, e, nameof(ResScale));
                 ResScaleCustom          = new ReactiveObject<float>();
@@ -337,6 +351,15 @@ namespace Ryujinx.Configuration
                 EnableVsync.Event       += static (sender, e) => LogValueChange(sender, e, nameof(EnableVsync));
                 EnableShaderCache       = new ReactiveObject<bool>();
                 EnableShaderCache.Event += static (sender, e) => LogValueChange(sender, e, nameof(EnableShaderCache));
+=======
+                ResScale          = new ReactiveObject<int>() { Name = "Res Scale", Category = "Graphics" };
+                ResScaleCustom    = new ReactiveObject<float>() { Name = "Custom Scale", Category = "Graphics" };
+                MaxAnisotropy     = new ReactiveObject<float>() { Name = "Anisotrophy", Category = "Graphics" };
+                AspectRatio       = new ReactiveObject<AspectRatio>() { Name = "Aspect", Category = "Graphics" };
+                ShadersDumpPath   = new ReactiveObject<string>(); //{ Name = "Dump Path", Category = "Graphics" };
+                EnableVsync       = new ReactiveObject<bool>() { Name = "VSync" , Category = "Graphics"};
+                EnableShaderCache = new ReactiveObject<bool>() { Name = "Shader Cache", Category = "Graphics" };
+>>>>>>> Adds more items to logs:
             }
         }
 
@@ -397,10 +420,10 @@ namespace Ryujinx.Configuration
             System                   = new SystemSection();
             Graphics                 = new GraphicsSection();
             Hid                      = new HidSection();
-            EnableDiscordIntegration = new ReactiveObject<bool>();
-            CheckUpdatesOnStart      = new ReactiveObject<bool>();
-            ShowConfirmExit          = new ReactiveObject<bool>();
-            HideCursorOnIdle         = new ReactiveObject<bool>();
+            EnableDiscordIntegration = new ReactiveObject<bool>(); //{ Name = "Discord Integration", Category = "ConfigState" };
+            CheckUpdatesOnStart      = new ReactiveObject<bool>(); //{ Name = "Update on start", Category = "ConfigState" };
+            ShowConfirmExit          = new ReactiveObject<bool>(); //{ Name = "Confirm on Exit", Category = "ConfigState" };
+            HideCursorOnIdle         = new ReactiveObject<bool>(); //{ Name = "Hide Cursor on Idle", Category = "ConfigState" };
         }
 
         public ConfigurationFileFormat ToFileFormat()
