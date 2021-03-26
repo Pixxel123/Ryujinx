@@ -4,7 +4,11 @@ using Gdk;
 using OpenTK.Graphics.OpenGL;
 using Ryujinx.Common;
 using Ryujinx.Common.Configuration;
+<<<<<<< HEAD
 using Ryujinx.Common.Logging;
+=======
+using Ryujinx.Common.Configuration.Hid;
+>>>>>>> Further removal of changes from #1942
 using Ryujinx.Configuration;
 using Ryujinx.Graphics.OpenGL;
 using Ryujinx.HLE.HOS.Services.Hid;
