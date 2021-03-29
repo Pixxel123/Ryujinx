@@ -91,10 +91,10 @@ namespace Ryujinx.Configuration
             {
                 GuiColumns        = new Columns();
                 ColumnSort        = new ColumnSortSettings();
-                GameDirs          = new ReactiveObject<List<string>>(); //{ Name = "Game dir", Category = "UI" };
-                EnableCustomTheme = new ReactiveObject<bool>(); //{ Name = "Custom Theme", Category = "UI" };
-                CustomThemePath   = new ReactiveObject<string>(); //{ Name = "Custom Theme", Category = "UI" };
-                StartFullscreen   = new ReactiveObject<bool>(); //{ Name = "Fullscreen", Category = "UI" };
+                GameDirs          = new ReactiveObject<List<string>>();
+                EnableCustomTheme = new ReactiveObject<bool>();
+                CustomThemePath   = new ReactiveObject<string>();
+                StartFullscreen   = new ReactiveObject<bool>();
             }
         }
 
@@ -176,9 +176,14 @@ namespace Ryujinx.Configuration
                 EnableGuest        = new ReactiveObject<bool>();
                 EnableFsAccessLog  = new ReactiveObject<bool>();
                 FilteredClasses    = new ReactiveObject<LogClass[]>();
+<<<<<<< HEAD
                 EnableFileLog      = new ReactiveObject<bool>(); //{ Name = "File Log", Category = "Logger" };
                 GraphicsDebugLevel = new ReactiveObject<GraphicsDebugLevel>() { Name = "Graphics level", Category = "Logger" };
 >>>>>>> Adds more items to logs:
+=======
+                EnableFileLog      = new ReactiveObject<bool>(loggedName: nameof(EnableFileLog));
+                GraphicsDebugLevel = new ReactiveObject<GraphicsDebugLevel>();
+>>>>>>> Removes hardcoded config state variables for logging
             }
         }
 
@@ -289,7 +294,7 @@ namespace Ryujinx.Configuration
 
             public HidSection()
             {
-                EnableKeyboard = new ReactiveObject<bool>() { Name = "Keyboard", Category = "Input" };
+                EnableKeyboard = new ReactiveObject<bool>();
                 Hotkeys        = new ReactiveObject<KeyboardHotkeys>();
                 InputConfig    = new ReactiveObject<List<InputConfig>>();
             }
@@ -338,6 +343,7 @@ namespace Ryujinx.Configuration
             public GraphicsSection()
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 ResScale                = new ReactiveObject<int>();
                 ResScale.Event          += static (sender, e) => LogValueChange(sender, e, nameof(ResScale));
                 ResScaleCustom          = new ReactiveObject<float>();
@@ -360,6 +366,15 @@ namespace Ryujinx.Configuration
                 EnableVsync       = new ReactiveObject<bool>() { Name = "VSync" , Category = "Graphics"};
                 EnableShaderCache = new ReactiveObject<bool>() { Name = "Shader Cache", Category = "Graphics" };
 >>>>>>> Adds more items to logs:
+=======
+                ResScale          = new ReactiveObject<int>(loggedName: nameof(ResScale));
+                ResScaleCustom    = new ReactiveObject<float>(loggedName: nameof(ResScaleCustom));
+                MaxAnisotropy     = new ReactiveObject<float>(loggedName: nameof(MaxAnisotropy));
+                AspectRatio       = new ReactiveObject<AspectRatio>(loggedName: nameof(AspectRatio));
+                ShadersDumpPath   = new ReactiveObject<string>();
+                EnableVsync       = new ReactiveObject<bool>(loggedName: nameof(EnableVsync));
+                EnableShaderCache = new ReactiveObject<bool>(loggedName: nameof(EnableShaderCache));
+>>>>>>> Removes hardcoded config state variables for logging
             }
         }
 
@@ -420,10 +435,10 @@ namespace Ryujinx.Configuration
             System                   = new SystemSection();
             Graphics                 = new GraphicsSection();
             Hid                      = new HidSection();
-            EnableDiscordIntegration = new ReactiveObject<bool>(); //{ Name = "Discord Integration", Category = "ConfigState" };
-            CheckUpdatesOnStart      = new ReactiveObject<bool>(); //{ Name = "Update on start", Category = "ConfigState" };
-            ShowConfirmExit          = new ReactiveObject<bool>(); //{ Name = "Confirm on Exit", Category = "ConfigState" };
-            HideCursorOnIdle         = new ReactiveObject<bool>(); //{ Name = "Hide Cursor on Idle", Category = "ConfigState" };
+            EnableDiscordIntegration = new ReactiveObject<bool>();
+            CheckUpdatesOnStart      = new ReactiveObject<bool>();
+            ShowConfirmExit          = new ReactiveObject<bool>();
+            HideCursorOnIdle         = new ReactiveObject<bool>();
         }
 
         public ConfigurationFileFormat ToFileFormat()

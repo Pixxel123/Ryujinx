@@ -440,10 +440,14 @@ namespace Ryujinx.Ui.Windows
             if (_audioBackendSelect.GetActiveIter(out TreeIter activeIter))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 ConfigurationState.Instance.System.AudioBackend.Value = (AudioBackend)_audioBackendStore.GetValue(activeIter, 1);
 =======
                 AudioBackend audioBackend = (AudioBackend)_audioBackendStore.GetValue(activeIter, 1);
 >>>>>>> Further removal of changes from #1942
+=======
+                ConfigurationState.Instance.System.AudioBackend.Value = (AudioBackend)_audioBackendStore.GetValue(activeIter, 1);
+>>>>>>> Removes hardcoded config state variables for logging
             }
 
             ConfigurationState.Instance.ToFileFormat().SaveConfig(Program.ConfigurationPath);
