@@ -156,6 +156,9 @@ namespace Ryujinx.Configuration
             public LoggerSection()
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Decoupled logging from ReactiveObject
                 EnableDebug         = new ReactiveObject<bool>();
                 EnableStub          = new ReactiveObject<bool>();
                 EnableInfo          = new ReactiveObject<bool>();
@@ -167,6 +170,7 @@ namespace Ryujinx.Configuration
                 EnableFileLog       = new ReactiveObject<bool>();
                 EnableFileLog.Event += static (sender, e) => LogValueChange(sender, e, nameof(EnableFileLog));
                 GraphicsDebugLevel  = new ReactiveObject<GraphicsDebugLevel>();
+<<<<<<< HEAD
 =======
                 EnableDebug        = new ReactiveObject<bool>();
                 EnableStub         = new ReactiveObject<bool>();
@@ -184,6 +188,8 @@ namespace Ryujinx.Configuration
                 EnableFileLog      = new ReactiveObject<bool>(loggedName: nameof(EnableFileLog));
                 GraphicsDebugLevel = new ReactiveObject<GraphicsDebugLevel>();
 >>>>>>> Removes hardcoded config state variables for logging
+=======
+>>>>>>> Decoupled logging from ReactiveObject
             }
         }
 
@@ -344,6 +350,9 @@ namespace Ryujinx.Configuration
             {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Decoupled logging from ReactiveObject
                 ResScale                = new ReactiveObject<int>();
                 ResScale.Event          += static (sender, e) => LogValueChange(sender, e, nameof(ResScale));
                 ResScaleCustom          = new ReactiveObject<float>();
@@ -357,6 +366,7 @@ namespace Ryujinx.Configuration
                 EnableVsync.Event       += static (sender, e) => LogValueChange(sender, e, nameof(EnableVsync));
                 EnableShaderCache       = new ReactiveObject<bool>();
                 EnableShaderCache.Event += static (sender, e) => LogValueChange(sender, e, nameof(EnableShaderCache));
+<<<<<<< HEAD
 =======
                 ResScale          = new ReactiveObject<int>() { Name = "Res Scale", Category = "Graphics" };
                 ResScaleCustom    = new ReactiveObject<float>() { Name = "Custom Scale", Category = "Graphics" };
@@ -375,6 +385,8 @@ namespace Ryujinx.Configuration
                 EnableVsync       = new ReactiveObject<bool>(loggedName: nameof(EnableVsync));
                 EnableShaderCache = new ReactiveObject<bool>(loggedName: nameof(EnableShaderCache));
 >>>>>>> Removes hardcoded config state variables for logging
+=======
+>>>>>>> Decoupled logging from ReactiveObject
             }
         }
 
