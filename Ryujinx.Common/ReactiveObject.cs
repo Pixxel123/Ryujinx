@@ -36,7 +36,11 @@ namespace Ryujinx.Common
 
                 if (!oldIsInitialized || !oldValue.Equals(_value))
                 {
+<<<<<<< HEAD
                     Event?.Invoke(this, new ReactiveEventArgs<T>(oldValue, value));
+=======
+                     Event?.Invoke(this, new ReactiveEventArgs<T>(oldValue, value));
+>>>>>>> Decoupled logging from ReactiveObject
                 }
             }
         }

@@ -157,6 +157,9 @@ namespace Ryujinx.Configuration
             {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Decoupled logging from ReactiveObject
 =======
 >>>>>>> Decoupled logging from ReactiveObject
                 EnableDebug         = new ReactiveObject<bool>();
@@ -170,6 +173,7 @@ namespace Ryujinx.Configuration
                 EnableFileLog       = new ReactiveObject<bool>();
                 EnableFileLog.Event += static (sender, e) => LogValueChange(sender, e, nameof(EnableFileLog));
                 GraphicsDebugLevel  = new ReactiveObject<GraphicsDebugLevel>();
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
                 EnableDebug        = new ReactiveObject<bool>();
@@ -188,6 +192,8 @@ namespace Ryujinx.Configuration
                 EnableFileLog      = new ReactiveObject<bool>(loggedName: nameof(EnableFileLog));
                 GraphicsDebugLevel = new ReactiveObject<GraphicsDebugLevel>();
 >>>>>>> Removes hardcoded config state variables for logging
+=======
+>>>>>>> Decoupled logging from ReactiveObject
 =======
 >>>>>>> Decoupled logging from ReactiveObject
             }
@@ -351,6 +357,9 @@ namespace Ryujinx.Configuration
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Decoupled logging from ReactiveObject
 =======
 >>>>>>> Decoupled logging from ReactiveObject
                 ResScale                = new ReactiveObject<int>();
@@ -366,6 +375,7 @@ namespace Ryujinx.Configuration
                 EnableVsync.Event       += static (sender, e) => LogValueChange(sender, e, nameof(EnableVsync));
                 EnableShaderCache       = new ReactiveObject<bool>();
                 EnableShaderCache.Event += static (sender, e) => LogValueChange(sender, e, nameof(EnableShaderCache));
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
                 ResScale          = new ReactiveObject<int>() { Name = "Res Scale", Category = "Graphics" };
@@ -385,6 +395,8 @@ namespace Ryujinx.Configuration
                 EnableVsync       = new ReactiveObject<bool>(loggedName: nameof(EnableVsync));
                 EnableShaderCache = new ReactiveObject<bool>(loggedName: nameof(EnableShaderCache));
 >>>>>>> Removes hardcoded config state variables for logging
+=======
+>>>>>>> Decoupled logging from ReactiveObject
 =======
 >>>>>>> Decoupled logging from ReactiveObject
             }
